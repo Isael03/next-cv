@@ -1,10 +1,10 @@
 import { MICHAEL } from '../data/data_cv'
 //import html2pdf from 'html2pdf.js';
-import foto from '../public/images/foto.png';
 import Link from 'next/link'
 import Head from 'next/head'
 import { cv_styles } from '../styles/cv_styles'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const CV = () => (
@@ -43,18 +43,18 @@ const CVContainer = () => {
     const experiences = data.experiences
 
 
-    const printPersonalContact = (icon, data, islink, key) => {
+    const printPersonalContact = (icon, data, islink, key, label, children) => {
         if (islink) {
             return (
                 <li key={key}>
-                    <span className="icon"><i className={icon} aria-hidden="true"></i></span>
-                    <span className="text"><Link href={data}><a target="_blank" rel="noopener noreferrer">{data}</a></Link></span>
+                    <span className="icon">{icon ? <FontAwesomeIcon icon={icon} /> : children}</span>
+                    <span className="text"><Link href={data}><a target="_blank" rel="noopener noreferrer">{label}</a></Link></span>
                 </li>
             )
         } else {
             return (
                 <li key={key}>
-                    <span className="icon"><i className={icon} aria-hidden="true"></i></span>
+                    <span className="icon">{icon ? <FontAwesomeIcon icon={icon} /> : children}</span>
                     <span className="text">{data}</span>
                 </li>
             )
@@ -82,8 +82,8 @@ const CVContainer = () => {
                     <div className="contactInfo">
                         <h3 className="title">Contacto</h3>
                         <ul>
-                            {contact.map(({ icon, data, islink }, key) => (
-                                printPersonalContact(icon, data, islink, key)
+                            {contact.map(({ icon, data, islink, label, children }, key) => (
+                                printPersonalContact(icon, data, islink, key, label, children)
                             ))}
                         </ul>
                     </div>
@@ -190,7 +190,7 @@ const CVContainer = () => {
                         <ul>
                             {
                                 interest.map(({ icon, data }, key) => (
-                                    <li key={key}><i className={icon} aria-hidden="true"></i>{data}</li>
+                                    <li key={key}><FontAwesomeIcon icon={icon} className="icon" />{data}</li>
                                 ))
                             }
 

@@ -1,12 +1,15 @@
+import { faBook, faGamepad, faMusic, faPhone, faEnvelope, faMap, } from '@fortawesome/free-solid-svg-icons'
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
 export const MICHAEL = {
     name: 'Michael Alexis Puelle Órdenes',
     rol: 'Analista Programador',
     contact: [
-        { icon: "fa fa-phone", data: '9 94493861', islink: false },
-        { icon: "fa fa-envelope fa-phone", data: 'mapo.umb@gmail.com', islink: false },
-        { data: 'Juan Martínez 780, Caldera. Chile', icon: 'fa fa-map-marker', islink: false },
-        { icon: "fa fa-github", data: 'https://github.com/Isael03', islink: true },
-        { icon: "fa fa-linkedin-square", data: 'https://linkedin.com/in/michael-puelle/', islink: true }
+        { icon: faPhone, data: '9 94493861', islink: false },
+        { icon: faEnvelope, data: 'mapo.umb@gmail.com', islink: false },
+        { data: 'Juan Martínez 780, Caldera. Chile', icon: faMap, islink: false },
+        { icon: null, data: 'https://github.com/Isael03', islink: true, label: 'Ir a mi Github', children: <FaGithub /> },
+        { icon: null, data: 'https://linkedin.com/in/michael-puelle/', islink: true, label: 'Ir a mi Linkedin', children: <FaLinkedin /> },
 
     ],
     education: [
@@ -21,9 +24,9 @@ export const MICHAEL = {
     ],
     perfil: 'Mi nombre es Michael y soy egresado de Ingeniería en Informática. Me caracterizo por ser alguien responsable y autodidacta al investigar nuevas tecnologías que me llaman la atención, sobretodo lo que es análisis de datos.',
     interests: [
-        { icon: 'fa fa-book', data: 'Lectura' },
-        { icon: 'fa fa-gamepad', data: 'Juegos' },
-        { icon: 'fa fa-music', data: 'Música' }
+        { icon: faBook, data: 'Lectura' },
+        { icon: faGamepad, data: 'Juegos' },
+        { icon: faMusic, data: 'Música' }
     ],
     skills: {
         frontend: ['Reactjs'],

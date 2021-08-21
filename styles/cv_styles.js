@@ -118,6 +118,14 @@ body {
   color: #03a9f4;
 }
 
+.icon {
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  color: #03a9f4;
+  margin-right:3px;
+}
+
 .contactInfo ul li span {
   color: #fff;
   font-weight: 300;
